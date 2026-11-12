@@ -16,7 +16,6 @@ def focal_loss_per_element(logits: Tensor, binary_targets: Tensor, gamma: float 
   return cross_entropy * (1 - p_t) ** gamma
 
 def masked_mean(losses: Tensor, valid: Tensor) -> Tensor:
-  """Average values where valid is True; never let padded/unknown labels contribute."""
   # TODO: sum selected losses and divide by the number of selected items.
   # Add a tiny epsilon to the denominator so an empty mask still produces zero.
   raise NotImplementedError("Hint: use valid.cast(...), valid.where(...), and mask.sum()")

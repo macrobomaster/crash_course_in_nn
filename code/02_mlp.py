@@ -4,7 +4,6 @@ from tinygrad import Tensor, nn
 from common import binary_accuracy, count_parameters, fit_binary_classifier
 
 def make_rings(count: int = 256, seed: int = 7) -> tuple[list[list[float]], list[list[float]]]:
-  """Create (points, binary_labels); no single straight boundary separates the classes."""
   rng = random.Random(seed)
   x, y = [], []
   for i in range(count):
